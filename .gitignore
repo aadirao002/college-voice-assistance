@@ -1,9 +1,51 @@
-# Secrets
-.env
-.env.local
+# =============================================================================
+# API keys, tokens, credentials — NEVER commit these
+# =============================================================================
+# All env files except safe templates (may contain OPENAI_API_KEY, etc.)
+.env*
+!**/.env.example
+!**/.env.sample
+!**/.env.template
 *.pem
+*.key
+*.p12
+*.pfx
+*.cer
+*.crt
+.secrets
+secrets.toml
+.envrc
+.direnv/
 
+# Common cloud / auth credential filenames
+credentials.json
+client_secret*.json
+service-account*.json
+google-credentials*.json
+firebase-adminsdk*.json
+.aws/credentials
+.azure/
+
+# App settings that often hold secrets locally
+local.settings.json
+
+# =============================================================================
+# Private / personal data (databases, exports, backups)
+# =============================================================================
+backend/data/*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.dump
+*.bak
+
+# Optional: uncomment if you keep exports next to the project
+# exports/
+# backups/
+
+# =============================================================================
 # Python
+# =============================================================================
 __pycache__/
 *.py[cod]
 *$py.class
@@ -12,25 +54,31 @@ __pycache__/
 venv/
 ENV/
 
-# Backend local DB
-backend/data/*.db
-
-# Node
+# =============================================================================
+# Node / frontend build
+# =============================================================================
 node_modules/
 frontend/node_modules/
 frontend/dist/
 dist/
 
+# =============================================================================
 # IDE / OS
+# =============================================================================
 .idea/
 .vscode/
 *.swp
 .DS_Store
 Thumbs.db
 
-# Logs
+# =============================================================================
+# Logs (can leak paths, tokens, or user data)
+# =============================================================================
 npm-debug.log*
 *.log
+logs/
 
-# TypeScript
+# =============================================================================
+# TypeScript / tooling
+# =============================================================================
 *.tsbuildinfo
