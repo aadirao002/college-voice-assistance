@@ -1,0 +1,16 @@
+{
+  "name": "college-voice-assistant",
+  "private": true,
+  "description": "Voice assistant: API + web UI",
+  "scripts": {
+    "install-frontend": "npm install --prefix frontend",
+    "dev:api": "npm --prefix backend run dev",
+    "dev:web": "npm --prefix frontend run dev",
+    "dev": "concurrently -k -n api,web -c cyan,magenta \"npm run dev:api\" \"npm run dev:web\"",
+    "build": "npm --prefix frontend run build",
+    "preview": "npm --prefix frontend run preview"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

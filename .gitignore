@@ -1,0 +1,36 @@
+# Secrets
+.env
+.env.local
+*.pem
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.venv/
+venv/
+ENV/
+
+# Backend local DB
+backend/data/*.db
+
+# Node
+node_modules/
+frontend/node_modules/
+frontend/dist/
+dist/
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+*.log
+
+# TypeScript
+*.tsbuildinfo
